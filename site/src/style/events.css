@@ -1,0 +1,294 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-image: url("../res/img/img.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+
+#h {
+  position: sticky;
+  height: 80px;
+  top: 0;
+  z-index: 9995;
+  padding: 0px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+#h::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+  
+  pointer-events: none;
+}
+
+#logo {
+  position: static;
+  height: 60px;
+  width: auto;
+  cursor: pointer;
+  z-index: 2;
+}
+
+#title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+  white-space: nowrap;
+  margin: 0;
+}
+
+#sb-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px); 
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 9999;
+}
+
+#sb-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#mb {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  position: static;
+  z-index: 2;
+}
+
+#mb span {
+  width: 35px;
+  height: 3px;
+  background: white;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+#sb {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background: rgba(15, 10, 30, 0.98);
+  backdrop-filter: blur(15px);
+  padding: 80px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10000;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+}
+
+#sb.active {
+  transform: translateX(0);
+}
+
+#sb-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 45px;
+  color: white;
+  cursor: pointer;
+  line-height: 0.8;
+  transition: color 0.2s;
+}
+
+#sb-close:hover {
+  color: #ff4d4d;
+}
+
+#sb a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+#sb a:hover {
+  color: #a08cff;
+}
+
+
+#posts {
+  width: 90%;
+  max-width: 1500px;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.post {
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.post h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: white;
+}
+
+.post-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.post img {
+  width: 100%;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.post p {
+  line-height: 1.6;
+  font-size: 1.4em;
+  color: white;
+  text-align: justify;
+}
+
+
+#img-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(4px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  z-index: 9990;
+}
+
+#img-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#img-view {
+  width: 90%;
+  max-width: 800px;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+#img-close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+#footer {
+  width: 100%;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: auto;
+}
+
+#footer h4 {
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+}
+
+
+
+@media (max-width: 600px) {
+  #dh {
+    padding: 0 20px;
+    height: 70px;
+  }
+
+  #title {
+    font-size: 20px;
+  }
+
+  #logo {
+    height: 45px;
+  }
+  
+  #footer h4 {
+    font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .post-content {
+    flex-direction: row;
+  }
+  
+  .post img {
+    width: 40%;
+    object-fit: cover;
+  }
+  
+  .post p {
+    width: 60%;
+  }
+}

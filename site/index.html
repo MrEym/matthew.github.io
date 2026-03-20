@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centrul de creație și agrement Fălești</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/style/index.css">
+    
+    <meta name="title" content="Centrul de Creație și Agrement „Eleonora Găină” Fălești">
+    <meta name="description" content="Descoperiți talentele copiilor și tinerilor la Centrul de Creație „Eleonora Găină” din Fălești. Oferim cursuri de artă, sport și activități culturale.">
+    <meta name="keywords" content="Centrul de Creatie Falesti, Eleonora Gaina, activitati tineri Falesti, cursuri copii, arta si cultura Moldova">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Romanian">
+    <meta name="author" content="Tekwill Junior Ambassadors">
+    
+    
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
+      import { getFirestore, collection, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+      
+      const firebaseConfig = {
+        apiKey: "AIzaSyBrL383wfZnjVKx5qckMZMotMb3vzgDue0",
+        authDomain: "recenzii-2abd0.firebaseapp.com",
+        projectId: "recenzii-2abd0",
+        storageBucket: "recenzii-2abd0.firebasestorage.app",
+        messagingSenderId: "490873271544",
+        appId: "1:490873271544:web:9f8fe9e786af928ba5370d",
+        measurementId: "G-L4VCC4K1PS"
+      };
+      
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const db = getFirestore(app);
+      
+      window.db = db;
+    </script>
+  </head>
+  <body id="main">
+    <header id="header">
+      <div id="logo">
+        <img src="src/res/img/logo.png" alt="logo">
+      </div>
+      <nav id="nav">
+        <a href="src/despre.html">DESPRE NOI</a>
+        <a href="src/evenimente.html">EVENIMENTE</a>
+        <a href="src/domenii.html">DOMENII</a>
+        <a href="src/contacte.html">CONTACTE</a>
+      </nav>
+      
+      <div id="mb">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+    
+    <div id="sb">
+      <a href="src/despre.html">DESPRE NOI</a>
+      <a href="src/evenimente.html">EVENIMENTE</a>
+      <a href="src/domenii.html">DOMENII</a>
+      <a href="src/contacte.html">CONTACTE</a>
+    </div>
+    
+    <div id="main-content">
+      <section id="hero">
+        <div id="hcontent">
+          <img id="herologo" src="src/res/img/logo.png" alt="logo">
+          <h1>Centrul de Creație și Agrement pentru Copii și Tineret</h1>
+          <h1>„Eleonora Găină” din orașul Fălești</h1>
+          <p>Locul unde talentul prinde aripi</p>
+          <div id="schedule">
+            <h2>Orar</h2>
+            <p>Luni - Vineri</p>
+            <p>08:00 - 17:00</p>
+          </div>
+          <div id="cb">
+            <button id="date" class="btn">Contactaţi-ne</button>
+            <button class="btn">Recenzii</button>
+          </div>
+        </div>
+      </section>
+    </div><br>
+    
+    <div id="modal" class="modal">
+      <div class="modal-box">
+        <span class="close">&times;</span>
+        <h2 id="mt">Date de contact</h2>
+        <p id="md">
+          Telefon: +373 259 22264 <br>
+          Adresa: Strada Moldovei 5, MD-5902<br>
+          Email: crrtfalesti@mail.ru <br>
+        </p>
+      </div>
+    </div>
+    
+    <div id="reviews-modal" class="modal">
+      <div class="modal-box">
+        <span class="close">&times;</span>
+        <h2>Recenzii</h2>
+        <div id="rc"></div>
+      </div>
+    </div>
+    
+    <footer id="footer">
+      <h4>Acest website a fost realizat în cadrul competiției „Tekwill Junior Ambassadors” organizată de proiectul „Tekwill în Fiecare Școală” și nu reflectă neapărat opinia proiectului.</h4>
+    </footer>
+    <script type="module" src="src/script/main.js"></script>
+  </body>
+</html>
